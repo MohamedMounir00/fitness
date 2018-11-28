@@ -50,6 +50,11 @@
 </script><script src="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/js/dropify.min.js"></script>
 
 <!-- Include this after the sweet alert js file -->
+
+<!-- Chart.js -->
+<script src="{{asset('vendors')}}/Chart.js/dist/Chart.min.js"></script>
+<!-- jQuery Sparklines -->
+<script src="{{asset('vendors')}}/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 @if($lang == "ar")
 
 <script src="{{asset('build')}}/js/custom.js"></script>

@@ -1,6 +1,7 @@
 <?php
 return[
     'admin_panel'=>'Admin Panel',
+    'welocam'=>'Welcome to the app giants',
 
     'createي'=>'Successfully saved',
     'updateFash'=>'Successfully update',
@@ -71,7 +72,10 @@ return[
     'role'=>'Role',
     'users'=>'Users',
     'admins'=>'Admins',
-
+    'count_ex' =>'Total Of Excircies',
+    'count_work' =>'Total Of Workouts',
+    'count_dites' =>'Total Of Dites',
+    'count_post' =>'Total Of Blog',
 
 
 

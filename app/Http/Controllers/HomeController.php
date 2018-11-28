@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exercise;
+use App\Post;
+use App\Recipe;
+use App\Workout;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('home');
+      $ex= Exercise::count();
+    $work=Workout::count();
+        $dites=Recipe::count();
+            $post=Post::count();
+        return view('home',compact('ex','work','dites','post'));
     }
 }
