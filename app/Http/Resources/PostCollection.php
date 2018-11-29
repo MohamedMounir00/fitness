@@ -22,7 +22,7 @@ class PostCollection extends JsonResource
             'tag'=>$this->tag->title,
             'url'=> url($this->imgepost->url ),
             'favorit'=>($this->favorit != '') ? 1 : 0,
-            'date'=>$this->created_at,
+            'date'=> new Carbon($this->created_at),
 
 
 
