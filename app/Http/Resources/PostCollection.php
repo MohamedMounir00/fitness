@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostCollection extends JsonResource
@@ -21,6 +22,7 @@ class PostCollection extends JsonResource
             'tag'=>$this->tag->title,
             'url'=> url($this->imgepost->url ),
             'favorit'=>($this->favorit != '') ? 1 : 0,
+            'date'=>$this->created_at,
 
 
 
