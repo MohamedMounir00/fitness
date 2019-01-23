@@ -31,7 +31,7 @@
                             <th>{{trans('backend.name_en')}}</th>
                         @endif
                         <th>{{trans('backend.date')}}</th>
-                            @can('bodypart-update')
+                            @can('bodypart-edit')
 
                             <th>{{trans('backend.update')}}</th>
                             @endcan
@@ -64,7 +64,7 @@
                 columns: [
                     { data: '{{(app()->getLocale() == 'ar') ? 'name_ar' :'name_en'}}' , name: '{{(app()->getLocale() == 'ar') ? 'name_ar' :'name_en'}}' },
                     { data: 'created_at', name: 'created_at' },
-                        @can('bodypart-update')
+                        @can('bodypart-edit')
 
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                     @endcan
