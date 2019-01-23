@@ -27,7 +27,7 @@ class ExerciseRequest extends FormRequest
             'name_ar'=>'required',
             'name_en'=>'required',
             'image'=>'required',
-            'video'=>'required|max:10240',
+            'video'=>'required|max:40240',
             'rest'=>'required',
             'sets'=>'required',
             'reps'=>'required',
