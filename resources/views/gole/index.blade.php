@@ -22,6 +22,7 @@
                 <div class="clearfix"></div>
             </div>
         <div class="x_content">
+            <div class="table-responsive">
 
             <table id="table1" class="table table-striped table-bordered bulk_action table1">
                 <thead>

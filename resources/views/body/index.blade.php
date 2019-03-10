@@ -21,6 +21,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
+                <div class="table-responsive">
 
                 <table id="table1" class="table table-striped table-bordered bulk_action table1">
                     <thead>
@@ -51,7 +52,9 @@
                 </table>
             </div>
         </div>
-    </div>@endsection
+    </div>
+
+@endsection
 @section('scripts')
 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
