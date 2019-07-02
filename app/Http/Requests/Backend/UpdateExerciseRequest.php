@@ -26,7 +26,7 @@ class UpdateExerciseRequest extends FormRequest
         return [
             'name_ar'=>'required',
             'name_en'=>'required',
-            //'image'=>'required',
+            'image'=>'image|mimes:jpeg,png,jpg,gif,svg',
             'video'=>'max:10240',
             'rest'=>'required',
             'sets'=>'required',

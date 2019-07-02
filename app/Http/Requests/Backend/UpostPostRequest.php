@@ -28,7 +28,7 @@ class UpostPostRequest extends FormRequest
             'title'=>'required',
             'description'=>'required',
             'tag_id'=>'required',
-            //'image'=>'required',
+            'image'=>'image|mimes:jpeg,png,jpg,gif,svg',
             
 
         ];

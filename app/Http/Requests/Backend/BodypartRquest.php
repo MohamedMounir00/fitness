@@ -26,7 +26,7 @@ class BodypartRquest extends FormRequest
         return [
             'name_ar'=>'required',
             'name_en'=>'required',
-            'image'=>'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
 }

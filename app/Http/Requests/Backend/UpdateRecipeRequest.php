@@ -28,7 +28,7 @@ class UpdateRecipeRequest extends FormRequest
 
             'name_ar'=>'required',
             'name_en'=>'required',
-            //'image'=>'required',
+            'image'=>'image|mimes:jpeg,png,jpg,gif,svg',
             'description_ar'=>'required',
             'description_en'=>'required',
             'ingredients_ar'=>'required',

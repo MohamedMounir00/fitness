@@ -28,7 +28,7 @@ class GoalRequest extends FormRequest
 
             'name_ar'=>'required',
             'name_en'=>'required',
-            'image'=>'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
 }

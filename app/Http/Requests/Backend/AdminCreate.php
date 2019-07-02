@@ -27,7 +27,7 @@ class AdminCreate extends FormRequest
             //
             'name'=>'required',
             'email'=>'required',
-            'password'=>'required',
+            'password'=> 'required|min:6',
             'roles'=>'required',
 
         ];
