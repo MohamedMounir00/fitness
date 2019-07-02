@@ -174,7 +174,6 @@ class AdminController extends Controller
         $data->delete();
 
         Alert::success(trans('backend.deleteFlash'))->persistent("Close");
-
         return response()->json([
             'success' => 'Record has been deleted successfully!'
         ]);

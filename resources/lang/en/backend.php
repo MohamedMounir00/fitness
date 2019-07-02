@@ -77,9 +77,24 @@ return[
     'count_dites' =>'Total Of Dites',
     'count_post' =>'Total Of Blog',
 
+    //////////////////////////////data table ///
+    "No_data_available_in_table"=>"No data available in table",
+    "Showing_0_to_0_of_0_entries"=>"Showing 0 to 0 of 0 entries",
+    "entries"=>"entries",
+    "show_t"=>"show",
+    "search"=>"search",
+    "No_matching_records_found"=>"No matching records found",
+    "First"=>"First",
+    "Last"=>"Last",
+    "Next"=>"Next",
+    "Previous"=>"Previous",
+    "showing"=>"Showing",
+    'processing'=>'Processing',
+    "of"=>"of",
 
-
-
+    'yes'=>'yes',
+    'no'=>'no',
+    'password'=>'password'
 
 
 ];

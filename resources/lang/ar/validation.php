@@ -40,4 +40,11 @@ return [
    'url'  => 'تنسيق حقل :attribute  غير صالح .',
    'recaptcha'  => 'حقل :attribute غير صحيح',
    'recaptcha_response_field'  => 'حقل :attribute غير صحيح',
+    'attributes' => [
+        'email'=>'البريد الالكترونى',
+        'name'=>'الاسم',
+        'password'=>'كلمه المرور',
+        'roles'=>'المهام',
+        'permission'=>'الصلاحيات'
+    ],
 ];
