@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserCollection extends JsonResource
@@ -20,7 +21,8 @@ class UserCollection extends JsonResource
                  'user_photo'=>url($this->imge),
                  'email'=>$this->email,
                  'token'=>$this->token,
-                 'created_at'=>$this->created_at,
+                 'created_at'=>Carbon::createFromFormat('Y-m-d H:i:s',  $this->created_at)->format('Y-m-d'),
+
              ];
 
     }
