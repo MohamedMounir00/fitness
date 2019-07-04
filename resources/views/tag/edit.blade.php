@@ -39,11 +39,11 @@
 
 
                             <div class="row form-group">
-                                <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.title')}} <span
+                                <label class="col-sm-12 col-form-label" for="">{{trans('backend.title')}} <span
                                     >*</span>
                                 </label>
-                                <div class="col-10 col-sm-12">
-                                    <input type="text" id="first-name" name="title" required class="form-control col-md-7 col-xs-12" value="{{$data->title}}">
+                                <div class="col-sm-9">
+                                    <input type="text" id="first-name" name="title" required class="form-control" value="{{$data->title}}">
                                 </div>
                             </div>
                             <br>

@@ -43,11 +43,11 @@
 
 
                             <div class="row form-group">
-                                <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.title')}} <span
+                                <label class="col-sm-12 col-form-label" for="name">{{trans('backend.title')}} <span
                                     >*</span>
                                 </label>
-                                <div class="col-10  col-sm-12">
-                                    <input type="text" id="first-name" name="title" required class="form-control col-md-7 col-xs-12" value="{{$data->title}}">
+                                <div class="col-sm-9">
+                                    <input type="text" id="first-name" name="title" required class="form-control" value="{{$data->title}}">
                                 </div>
                             </div>
                             <br>
@@ -58,11 +58,11 @@
 
 
                             <div class="row form-group">
-                                <label class="col-md-12 col-sm-12 col-form-label"
+                                <label class="col-sm-12 col-form-label"
                                        for="">{{trans('backend.tag')}} <span
                                     >*</span>
                                 </label>
-                                <div class="col-md-7 col-sm-12">
+                                <div class="col-sm-9">
                                     <select name="tag_id" id="heard" class="form-control" required>
                                         @foreach($tag as $t)
                                             <option value="{{$t->id}}" {{($data->tag_id == $t->id) ? 'selected' : ''}}> {{$t->title}}</option>
@@ -77,13 +77,13 @@
 
 
                             <div class="row form-group">
-                                <label class="col-md-2 col-sm-12 col-form-label"
+                                <label class="col-sm-12 col-form-label"
                                        for="">{{trans('backend.description')}} <span
                                     >*</span>
                                 </label>
-                                <div class="col-10  col-sm-12">
+                                <div class="col-sm-9">
                                     <textarea name="description" id="descr" required
-                                              class="form-control col-md-7 col-xs-12">{{$data->description}}</textarea>
+                                              class="form-control">{{$data->description}}</textarea>
                                 </div>
                             </div>
                             <br>
@@ -93,11 +93,11 @@
 
 
                             <div class="row form-group">
-                                <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
+                                <label class="col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
                                     >*</span>
                                 </label>
-                                <div class="col-md-5  col-sm-12">
-                                    <input id="name" class="form-control col-md-7 col-xs-12 dropify"
+                                <div class="col-sm-9">
+                                    <input id="name" class="form-control  dropify"
                                            name="image"
                                             type="file">
 
@@ -111,10 +111,10 @@
 
 
                             <div class="row form-group">
-                                <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.image')}} <span
+                                <label class="col-sm-12 col-form-label" for="name">{{trans('backend.image')}} <span
                                     >*</span>
                                 </label>
-                                <div class="col-10 col-md-10  col-sm-12">
+                                <div class="col-sm-9">
                                     <div class="image view view-first">
                                         @if(isset($data->imgepost->url))
                                             <img  style="width: 300px; display: block;"src="{{url($data->imgepost->url)}}">

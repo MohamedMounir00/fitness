@@ -43,11 +43,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.title')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.title')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10 col-sm-12">
-                        <input type="text" id="first-name" name="title" required class="form-control col-md-7 col-xs-12">
+                    <div class="col-sm-9">
+                        <input type="text" id="first-name" name="title" required class="form-control">
                     </div>
                 </div>
                 <br>
@@ -57,11 +57,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-12 col-sm-12 col-form-label"
+                    <label class="col-sm-12 col-form-label"
                            for="">{{trans('backend.tag')}} <span
                         >*</span>
                     </label>
-                    <div class="col-md-7  col-sm-12">
+                    <div class="col-sm-9">
                         <select name="tag_id" id="heard" class="form-control" required>
                             @foreach($tag as $data)
                                 <option value="{{$data->id}}">{{$data->title}}</option>
@@ -76,13 +76,13 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label"
+                    <label class="col-sm-12 col-form-label"
                            for="">{{trans('backend.description')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10  col-sm-12">
+                    <div class="col-sm-9">
                         <textarea name="description" id="descr" required
-                                  class="form-control col-md-7 col-xs-12"></textarea>
+                                  class="form-control"></textarea>
                     </div>
                 </div>
                 <br>
@@ -93,11 +93,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
+                    <label class="col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
                                >*</span>
                     </label>
-                    <div class="col-md-5 col-sm-12">
-                        <input id="name" class="form-control col-md-7 col-xs-12 dropify"
+                    <div class="col-sm-9">
+                        <input id="name" class="form-control dropify"
                                 name="image"
                                 required="required" type="file">
                     </div>
