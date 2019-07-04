@@ -8,6 +8,15 @@
         <!-- begin:: Aside -->
         <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
             <div class="kt-aside__brand-logo">
+                    <a href="index.html">
+                            <a href="#" style="color: #FFF;
+                            font-size: 20px;
+                            text-align: center;
+                            font-weight: 600;">
+                                      <img alt="Logo" src="{{asset('assets/logoapp.png')}}" style="width: 160px;" />
+                                     
+                                     </a>
+                    </a>
             </div>
             <div class="kt-aside__brand-tools">
                 <button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler">

@@ -56,3 +56,6 @@ textarea {
     font-weight: 700 !important;
     font-size: 23px !important;
 }
+.close {
+    margin-right: 10px !important
+}

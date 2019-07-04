@@ -22,7 +22,8 @@
 
                             <a href="{{ route('roles.create') }}" class="btn btn-brand btn-elevate btn-icon-sm">
                                 <i class="la la-plus"></i>
-                                إنشاء 
+                                {{trans('backend.create')}}
+
                             </a>
                         </div>
                         @endcan

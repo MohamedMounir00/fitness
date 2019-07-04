@@ -11,7 +11,6 @@
                         <i class="kt-font-brand flaticon2-line-chart"></i>
                     </span>
                     <h3 class="kt-portlet__head-title">
-                            Show Role
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
@@ -36,14 +35,42 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <strong class="roleName">Permissions:</strong>
                                     @if(!empty($rolePermissions))
                                         @foreach($rolePermissions as $v)
                                             <label style="margin:3px;background-color:#5d78ffc9" class="kt-badge kt-badge--dark kt-badge--inline">{{trans('backend.'. $v->name) }}  </label>
                                         @endforeach
                                     @endif
-                                </div>
+                                </div> --}}
+
+
+
+
+                                <div class="form-group row">
+                                        @if(!empty($rolePermissions))
+                                        @foreach($rolePermissions as $v)
+                                        <div class="col-3">
+                                            <span class="kt-switch kt-switch--icon">
+                                                <label>
+                                                    {{ Form::checkbox('permission[]', $v->id, true, array('class' => 'kt-checkbox','disabled')) }}
+    
+                                                    {{ trans('admin.'.$v->name) }}
+                
+                                                    <span></span>
+                                                </label>
+                                            </span>
+                                        </div>
+                                        @endforeach
+                                        @endif 
+                                    </div>
+
+
+
+
+
+
+
                             </div>
                         </div>
             </div>
