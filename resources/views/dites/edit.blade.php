@@ -119,11 +119,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.fat')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.fat')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10  col-sm-12">
-                        <input type="number" id="first-name" name="fat" required class="form-control col-md-7 col-xs-12" value="{{$data->fat}}">
+                    <div class="col-sm-9">
+                        <input type="number" id="first-name" name="fat" required class="form-control" value="{{$data->fat}}">
                     </div>
                 </div>
                 <br>
@@ -134,11 +134,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.servings')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.servings')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10  col-sm-12">
-                        <input type="number" id="first-name" name="servings" required class="form-control col-md-7 col-xs-12" value="{{$data->servings}}">
+                    <div class="col-sm-9">
+                        <input type="number" id="first-name" name="servings" required class="form-control" value="{{$data->servings}}">
                     </div>
                 </div>
                 <br>
@@ -150,11 +150,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.total_time')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.total_time')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10  col-sm-12">
-                        <input type="number" id="first-name" name="total_time" required class="form-control col-md-7 col-xs-12" value="{{$data->total_time}}">
+                    <div class="col-sm-9">
+                        <input type="number" id="first-name" name="total_time" required class="form-control" value="{{$data->total_time}}">
                     </div>
                 </div>
                 <br>
@@ -165,10 +165,10 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-12 col-sm-12 col-form-label" for="">{{trans('backend.category')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.category')}} <span
                         >*</span>
                     </label>
-                    <div class="col-md-7  col-sm-12">
+                    <div class="col-sm-9">
                         <select name="cat_id" id="heard" class="form-control" required>
                             @foreach($cat as $c)
                                 <option value="{{$c->id}}" {{($data->cat_id == $c->id) ? 'selected' : ''}}> {{(app()->getLocale() == 'ar') ? $c->name_ar :$c->name_en}}</option>
@@ -185,11 +185,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.description_ar')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.description_ar')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10  col-sm-12">
-                        <textarea name="description_ar" id="descr"required class="form-control col-md-7 col-xs-12" >{{$data->description_ar}}</textarea>
+                    <div class="col-sm-9">
+                        <textarea name="description_ar" id="descr"required class="form-control" >{{$data->description_ar}}</textarea>
                     </div>
                 </div>
                 <br>
@@ -200,11 +200,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.description_en')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.description_en')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10 col-sm-12">
-                        <textarea name="description_en" id="descr"required class="form-control col-md-7 col-xs-12" >{{$data->description_en}}</textarea>
+                    <div class="col-sm-9">
+                        <textarea name="description_en" id="descr"required class="form-control" >{{$data->description_en}}</textarea>
                     </div>
                 </div>
                 <br>
@@ -215,42 +215,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.ingredients_ar')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.ingredients_ar')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10  col-sm-12">
-                        <textarea name="ingredients_ar" id="descr"required class="form-control col-md-7 col-xs-12" >{{$data->ingredients_ar}}</textarea>
-                    </div>
-                </div>
-                <br>
-
-
-
-
-
-
-
-                <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.ingredients_en')}} <span
-                        >*</span>
-                    </label>
-                    <div class="col-10  col-sm-12">
-                        <textarea name="ingredients_en" id="descr"required class="form-control col-md-7 col-xs-12" >{{$data->ingredients_en}}</textarea>
-                    </div>
-                </div>
-                <br>
-
-
-
-
-
-
-                <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.directions_ar')}} <span
-                        >*</span>
-                    </label>
-                    <div class="col-10  col-sm-12">
-                        <textarea name="directions_ar" id="descr"required class="form-control col-md-7 col-xs-12" >{{$data->directions_ar}}</textarea>
+                    <div class="col-sm-9">
+                        <textarea name="ingredients_ar" id="descr"required class="form-control" >{{$data->ingredients_ar}}</textarea>
                     </div>
                 </div>
                 <br>
@@ -262,11 +231,42 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="">{{trans('backend.directions_en')}} <span
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.ingredients_en')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10 col-sm-12">
-                        <textarea name="directions_en" id="descr"required class="form-control col-md-7 col-xs-12" >{{$data->directions_en}}</textarea>
+                    <div class="col-sm-9">
+                        <textarea name="ingredients_en" id="descr"required class="form-control" >{{$data->ingredients_en}}</textarea>
+                    </div>
+                </div>
+                <br>
+
+
+
+
+
+
+                <div class="row form-group">
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.directions_ar')}} <span
+                        >*</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <textarea name="directions_ar" id="descr"required class="form-control " >{{$data->directions_ar}}</textarea>
+                    </div>
+                </div>
+                <br>
+
+
+
+
+
+
+
+                <div class="row form-group">
+                    <label class="col-sm-12 col-form-label" for="">{{trans('backend.directions_en')}} <span
+                        >*</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <textarea name="directions_en" id="descr"required class="form-control " >{{$data->directions_en}}</textarea>
                     </div>
                 </div>
                 <br>
@@ -280,11 +280,11 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
+                    <label class="col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
                         >*</span>
                     </label>
-                    <div class="col-md-5  col-sm-12">
-                        <input id="name" class="form-control col-md-7 col-xs-12 dropify"
+                    <div class="col-sm-9">
+                        <input id="name" class="form-control dropify"
                                name="image"
                                 type="file">
 
@@ -299,10 +299,10 @@
 
 
                 <div class="row form-group">
-                    <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.image')}} <span
+                    <label class="col-sm-12 col-form-label" for="name">{{trans('backend.image')}} <span
                         >*</span>
                     </label>
-                    <div class="col-10 col-md-10  col-sm-12">
+                    <div class="col-sm-9">
                         <div class="image view view-first">
                             @if(isset($data->imgeRE->url))
                                 <img  style="width: 300px; display: block;"src="{{url($data->imgeRE->url)}}">
