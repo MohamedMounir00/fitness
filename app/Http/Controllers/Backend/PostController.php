@@ -154,14 +154,14 @@ class PostController extends Controller
                 return  $data->tag->title ;
             })
             ->addColumn('action', function ($data) {
-                return '<a href="' . route('post.edit', $data->id) . '" class="btn btn-round  btn-primary"><i class="fa fa-edit"></i></a>
+                return '<a href="' . route('post.edit', $data->id) . '" class="btn btn-outline-primary">' . trans("backend.update") . '</a>
 
             ';
             })
             ->addColumn('delete', function ($data) {
                 return '
 
-          <button class="btn btn-delete btn btn-round  btn-danger" data-remote="delete_post/' . $data->id . '"><i class="fa fa-remove"></i></button>
+          <button class="btn btn-outline-danger" data-remote="delete_post/' . $data->id . '">' . trans("backend.delete") . '</button>
             ';
             })
             ->rawColumns(['action','delete'])

@@ -192,8 +192,7 @@ class AdminController extends Controller
             ->addColumn('action', function ($data) {
 
 
-                return '<a href="' . route('admin.edit', $data->id) . '" class="btn btn-round  btn-primary"><i class="fa fa-edit"></i></a>
-          ';
+                return '<a href="' . route('admin.edit', $data->id) . '" class="btn btn-outline-primary"> ' . trans("backend.update") . '  </a>';
 
             })
             ->addColumn('delete', function ($data) {
@@ -201,7 +200,7 @@ class AdminController extends Controller
                 if (auth()->user()->id!=$data->id) {
 
                     return '
-          <button class="btn btn-delete btn btn-round  btn-danger" data-remote="delete_admin/' . $data->id . '"><i class="fa fa-remove"></i></button>';
+          <button class="btn btn-outline-danger" data-remote="delete_admin/' . $data->id . '"> '.trans("backend.delete").' </button>';
                 }
             })
             ->rawColumns(['action','delete'])

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 @php  $lang = LaravelLocalization::getCurrentLocale();  @endphp
 
@@ -12,7 +13,7 @@
 
     <title>Gentelella Alela! | </title>
 
-    <!-- Bootstrap -->
+    {{-- <!-- Bootstrap -->
     <link href="{{asset('vendors')}}/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('vendors')}}/bootstrap-rtl/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -23,10 +24,171 @@
     <link href="{{asset('vendors')}}/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="{{asset('build')}}/css/custom.css" rel="stylesheet">
+    <link href="{{asset('build')}}/css/custom.css" rel="stylesheet"> --}}
+    <link href="{{asset('assets/app/custom/login/login-v4.default.css')}}" rel="stylesheet" type="text/css" />
+
+    @include('partials.header')
+
 </head>
 
-<body class="login">
+
+
+
+<body style="font-family: 'Tajawal', sans-serif !important;" class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+
+		<!-- begin:: Page -->
+		<div class="kt-grid kt-grid--ver kt-grid--root">
+			<div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v4 kt-login--signin" id="kt_login">
+				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(../assets/media/bg/bg-2.jpg);">
+					<div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
+						<div class="kt-login__container">
+							<div class="kt-login__logo">
+
+                                
+								<a href="#">
+                                <img class="loginLogo" src="{{ asset('assets/logoapp.png')}}">
+								</a>
+                            </div>
+                            
+
+							<div class="kt-login__signin">
+								<div class="kt-login__head">
+									<h3 class="kt-login__title">تسجيل دخول للعمالقه
+                                        </h3>
+                                </div>
+                                
+{{-- 
+
+                                 <form class="kt-form" >
+                                        @csrf                   
+                                        <div>
+                                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                            @endif
+                                        </div>
+
+
+                                        <div>
+                                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                    
+                                            @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                            @endif                   
+                                         </div>
+
+
+
+                                        <div>
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Login') }}
+                                            </button>
+                    
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                {{ __('Forgot Your Password?') }}
+                                            </a>
+                                        </div>
+                    
+                                        <div class="clearfix"></div>
+                    
+                                        <div class="separator">
+                                            <p class="change_link">جدید در سایت؟
+                                                <a href="#signup" class="to_register"> ایجاد حساب </a>
+                                            </p>
+                    
+                    
+                                         
+                                        </div>
+                                    </form> --}}
+
+
+
+
+
+
+								<form class="kt-form" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                                    @csrf   
+									<div class="input-group">
+
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="البريد الالكترونى">
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                            @endif
+                                        
+                                    </div>
+                                    
+
+
+									<div class="input-group">
+										<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="كلمه المرور">
+                    
+                                            @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                            @endif   
+                                    </div>
+                                    
+
+
+                                    <br><br>
+									
+                                    
+
+
+									<div class="kt-login__actions">
+										<button id="kt_login_signin_submit" class="btn btn-brand btn-pill kt-login__btn-primary">تسجيل دخول</button>
+									</div>
+                                </form> 
+                                
+
+
+
+
+
+
+
+                            </div>
+                            
+
+
+							
+                            
+
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        
+        @include('partials.footer')
+	
+	
+
+	<!-- end::Body -->
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <body class="login">
+
 <div>
     <a class="hiddenanchor" id="signup"></a>
     <a class="hiddenanchor" id="signin"></a>
@@ -117,4 +279,10 @@
     </div>
 </div>
 </body>
+ --}}
+
+
+
+
+
 </html>

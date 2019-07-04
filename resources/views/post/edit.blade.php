@@ -1,9 +1,173 @@
 @extends('layouts.app')
+@section('page_title' , trans('backend.update'))
 
 @section('content')
 
 
+<div class="kt-portlet kt-portlet--mobile">
+        <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <span class="kt-portlet__head-icon">
+                        <i class="kt-font-brand flaticon2-line-chart"></i>
+                    </span>
+                    <h3 class="kt-portlet__head-title">
+                            {{trans('backend.update')}}
+                    </h3>
+                </div>
+                
+            </div>
 
+
+
+
+            <div class="kt-portlet__body">
+                    @if(isset($errors) > 0)
+                    @if(Session::has('errors'))
+
+                        <div class="alert alert-danger " >
+                            <ul >
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                @endif
+
+
+
+                {!! Form::open(['route'=>['post.update',$data->id],'method'=>'PUT','class'=>'form-horizontal form-label-left ','novalidate','files'=>true]) !!}
+
+
+
+                            <div class="row form-group">
+                                <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.title')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-10  col-sm-12">
+                                    <input type="text" id="first-name" name="title" required class="form-control col-md-7 col-xs-12" value="{{$data->title}}">
+                                </div>
+                            </div>
+                            <br>
+
+
+
+
+
+
+                            <div class="row form-group">
+                                <label class="col-md-12 col-sm-12 col-form-label"
+                                       for="">{{trans('backend.tag')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-md-7 col-sm-12">
+                                    <select name="tag_id" id="heard" class="form-control" required>
+                                        @foreach($tag as $t)
+                                            <option value="{{$t->id}}" {{($data->tag_id == $t->id) ? 'selected' : ''}}> {{$t->title}}</option>
+
+                                        @endforeach
+                                    </select></div>
+                            </div>
+                            <br>
+
+
+
+
+
+                            <div class="row form-group">
+                                <label class="col-md-2 col-sm-12 col-form-label"
+                                       for="">{{trans('backend.description')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-10  col-sm-12">
+                                    <textarea name="description" id="descr" required
+                                              class="form-control col-md-7 col-xs-12">{{$data->description}}</textarea>
+                                </div>
+                            </div>
+                            <br>
+
+
+
+
+
+                            <div class="row form-group">
+                                <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.upload_image')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-md-5  col-sm-12">
+                                    <input id="name" class="form-control col-md-7 col-xs-12 dropify"
+                                           name="image"
+                                            type="file">
+
+                                </div>
+                            </div>
+                            <br>
+
+
+
+
+
+
+                            <div class="row form-group">
+                                <label class="col-md-2 col-sm-12 col-form-label" for="name">{{trans('backend.image')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-10 col-md-10  col-sm-12">
+                                    <div class="image view view-first">
+                                        @if(isset($data->imgepost->url))
+                                            <img  style="width: 300px; display: block;"src="{{url($data->imgepost->url)}}">
+                                        @endif
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br>
+
+
+
+                
+                            <br>
+                            <div class="myButton">
+                                    <button id="send" type="submit" class="btn btn-success btn-elevate btn-pill btn-sm">{{trans('backend.update')}}</button>
+                                    <a href="{{route('post.index')}}"  class="btn btn-info btn-elevate btn-pill btn-sm">{{trans('backend.back')}}</a>
+                            </div>
+
+                            {!! Form::close() !!}
+
+            </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
 
                     <div class="x_panel">
                         <div class="x_title">
@@ -116,7 +280,7 @@
 
 
                         </div>
-                    </div>
+                    </div> --}}
 
 
 @endsection

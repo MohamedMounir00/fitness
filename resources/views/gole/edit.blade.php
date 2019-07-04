@@ -1,8 +1,142 @@
 @extends('layouts.app')
+@section('page_title' , trans('backend.goleupdate'))
 
 @section('content')
 
 
+
+<div class="kt-portlet kt-portlet--mobile">
+        <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <span class="kt-portlet__head-icon">
+                        <i class="kt-font-brand flaticon2-line-chart"></i>
+                    </span>
+                    <h3 class="kt-portlet__head-title">
+                            {{trans('backend.goleupdate')}}
+                    </h3>
+                </div>
+               
+            </div>
+
+
+
+            <div class="kt-portlet__body">
+                    @if(isset($errors) > 0)
+                    @if(Session::has('errors'))
+
+                        <div class="alert alert-danger " >
+                            <ul >
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                @endif
+
+
+
+                {!! Form::open(['route'=>['goal.update',$goal->id],'method'=>'PUT','class'=>'form-horizontal form-label-left ','novalidate','files'=>true]) !!}
+
+
+
+                            <div class="row form-group">
+                                <label class="col-sm-12 col-form-label" for="">{{trans('backend.name_ar')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="first-name" name="name_ar" required class="form-control" value="{{$goal->name_ar}}">
+                                </div>
+                            </div>
+                            
+                            <br>
+
+
+                            <div class="row form-group">
+                                <label class="col-sm-12 col-form-label" for="">{{trans('backend.name_en')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="first-name" name="name_en" required class="form-control" value="{{$goal->name_en}}">
+                                </div>
+                            </div>
+
+
+                            <br>
+
+
+
+                            <div class="row form-group">
+                                <label class="col-sm-12 col-form-label" for="">{{trans('backend.upload_image')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-sm-9">
+                                    <input id="name" class="form-control dropify"
+                                           name="image"
+                                            type="file">
+                                </div>
+                            </div>
+
+
+
+                            <br>
+
+
+                            <div class="row form-group">
+                                <label class="col-sm-12 col-form-label" for="">{{trans('backend.image')}} <span
+                                    >*</span>
+                                </label>
+                                <div class="col-sm-9">
+                                    <div class="image view view-first">
+                                        @if(isset($goal->imgeGo->url))
+                                            <img  style="width: 300px; display: block;"src="{{url($goal->imgeGo->url)}}">
+                                        @endif
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <br>
+                            <div class="myButton">
+                                    <button id="send" type="submit" class="btn btn-success btn-elevate btn-pill btn-sm">{{trans('backend.update')}}</button>
+                                    <a href="{{route('goal.index')}}"  class="btn btn-info btn-elevate btn-pill btn-sm">{{trans('backend.back')}}</a>
+                            </div>
+
+                            {!! Form::close() !!}
+            </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
 
 
                     <div class="x_panel">
@@ -41,7 +175,7 @@
 
 
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.name_ar')}} <span
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.name_ar')}} <span
                                     >*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -49,7 +183,7 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.name_en')}} <span
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.name_en')}} <span
                                     >*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -57,7 +191,7 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.upload_image')}} <span
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.upload_image')}} <span
                                     >*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -70,7 +204,7 @@
 
 
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.image')}} <span
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.image')}} <span
                                     >*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -90,7 +224,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-3">
                                     <button id="send" type="submit" class="btn btn-success">{{trans('backend.update')}}</button>
-                                    <a href="{{route('body.index')}}"  class="btn btn-primary">{{trans('backend.back')}}</a>
+                                    <a href="{{route('goal.index')}}"  class="btn btn-primary">{{trans('backend.back')}}</a>
 
                                 </div>
                             </div>
@@ -100,7 +234,7 @@
 
 
                         </div>
-                    </div>
+                    </div> --}}
 
 
 @endsection

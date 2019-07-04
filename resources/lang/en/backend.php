@@ -94,7 +94,83 @@ return[
 
     'yes'=>'yes',
     'no'=>'no',
-    'password'=>'password'
+    'password'=>'password',
+ ////role
+    'admin-list'=>'admin list',
+    'admin-create'=>'admin create',
+    'admin-edit'=>'admin edit',
+    'admin-delete'=>'admin delete',
+    ////////////////////
+    'user-list'=>'user list',
+    'user-create'=>'user create',
+    'user-edit'=>'user edit',
+    'user-delete'=>'user delete',
+    ////////////////////
+    'role-list'=>'role list',
+    'role-create'=>'role create',
+    'role-edit'=>'role edit',
+    'role-delete'=>'role delete',
+    ////////////////////
+    'bodypart-list'=>'body part-list',
+    'bodypart-create'=>'body part create',
+    'bodypart-edit'=>'body part edit',
+    'bodypart-delete'=>'body part delete',
+    ///////////////////////
+    'category-list'=>'category list',
+    'category-create'=>'category create',
+    'category-edit'=>'category edit',
+    'category-delete'=>'category delete',
+    ///////////////////////v
+    'equipment-list'=>'equipment list',
+    'equipment-create'=>'equipment create',
+    'equipment-edit'=>' equipment edit',
+    'equipment-delete'=>'equipment delete',
+    ///////////////////////
+    'exercise-list'=>'exercise list',
+    'exercise-create'=>'exercise create',
+    'exercise-edit'=>'exercise edit',
+    'exercise-delete'=>'exercise delete',
+    ///////////////////////
+    'goal-list'=>'goal list',
+    'goal-create'=>'goal create',
+    'goal-edit'=>'goal edit',
+    'goal-delete'=>'goal delete',
+    ///////////////////////
+    'level-list'=>'level list',
+    'level-create'=>'level create',
+    'level-edit'=>'level edit',
+    'level-delete'=>'level delete',
+    ///////////////////////
+    'post-list'=>'post list',
+    'post-create'=>'post create',
+    'post-edit'=>'post edit',
+    'post-delete'=>'post delete',
+    ///////////////////////
+    'recipe-list'=>'recipe list',
+    'recipe-create'=>'recipe create',
+    'recipe-edit'=>'recipe edit',
+    'recipe-delete'=>'recipe delete',
+    ///////////////////////
+    'slider-list'=>'slider list',
+    'slider-edit'=>'slider edit',
+    ///////////////////////
+    'tag-list'=>'tag list',
+    'tag-create'=>'tag create',
+    'tag-edit'=>'tag edit',
+    'tag-delete'=>'tag delete',
+    ///////////////////////
+    ///////////////////////
+    'workout-list'=>'workout lis',
+    'workout-create'=>'workout create',
+    'workout-edit'=>'workout edit',
+    'workout-delete'=>'workout delete',
+    ///////////////////////
+    'permission'=>'permission',
+    'web_site'=>'Giants',
+    'home'=>'Home',
+    'logout'=>'logout',
+        'details'=>'details'
+
 
 
 ];

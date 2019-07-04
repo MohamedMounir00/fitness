@@ -146,14 +146,14 @@ class GoalController extends Controller
         return Datatables::of($goal)
 
             ->addColumn('action', function ($goal) {
-                return '<a href="'.route('goal.edit',$goal->id).'" class="btn btn-round  btn-primary"><i class="fa fa-edit"></i></a>
+                return '<a href="'.route('goal.edit',$goal->id).'" class="btn btn-outline-primary"> ' . trans("backend.update") . ' </a>
 
             ';
             })
             ->addColumn('delete', function ($goal) {
                 return '
 
-          <button class="btn btn-delete btn btn-round  btn-danger" data-remote="delete_gole/'.$goal->id. '"><i class="fa fa-remove"></i></button>
+          <button class="btn btn-outline-danger" data-remote="delete_gole/'.$goal->id. '">' . trans("backend.delete") . '</button>
             ';
             })
           ->rawColumns(['action','delete'])

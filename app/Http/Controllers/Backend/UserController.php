@@ -119,7 +119,7 @@ class UserController extends Controller
 
             {
                 return '
-          <button class="btn btn-delete btn btn-round  btn-danger" data-remote="delete_user/' . $data->id . '"><i class="fa fa-remove"></i></button>
+          <button class="btn btn-outline-danger" data-remote="delete_user/' . $data->id . '">' . trans("backend.delete") . '</button>
             ';
             })
             ->rawColumns(['action'])

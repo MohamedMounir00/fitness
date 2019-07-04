@@ -4,6 +4,24 @@
 
 @endphp
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="top_nav hidden-print">
     <div class="nav_menu">
         <nav>

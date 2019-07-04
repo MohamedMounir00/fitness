@@ -2218,7 +2218,7 @@ function init_validator() {
     validator.message.number_max = 'خیلی زیاد';
     validator.message.url = 'URL نا معتبر';
     validator.message.number = 'عدد نمی‌باشد';
-    validator.message.email = 'آدرس ایمیل نا معتبر است.';
+    validator.message.email = 'البريد الالكترونى غير صحيح.';
     validator.message.email_repeat = 'تکرار ایمیل با ایمیل مطابقت ندارد';
     validator.message.date = 'تاریخ نامعتبر';
     validator.message.time = 'زمان نامعتبر';

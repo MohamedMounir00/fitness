@@ -1,70 +1,127 @@
 @extends('layouts.app')
+@section('page_title' , trans('backend.exercises'))
 
 @section('content')
-    @include('partials.messages')
+@include('partials.messages')
 
-    <div class="x_panel">
-            <div class="x_title">
-                <h2>{{trans('backend.exercises')}}</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
+<div class="kt-portlet kt-portlet--mobile">
+        <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <span class="kt-portlet__head-icon">
+                        <i class="kt-font-brand flaticon2-line-chart"></i>
+                    </span>
+                    <h3 class="kt-portlet__head-title">
+                            {{trans('backend.exercises')}}
+                    </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-wrapper">
+                            @can('exercise-create')
+                        <div class="kt-portlet__head-actions">
+                        
+                            <a href="{{route('exercises.create')}}" class="btn btn-brand btn-elevate btn-icon-sm">
+                                <i class="la la-plus"></i>
+                                {{trans('backend.create')}}
 
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                    @can('exercise-create')
-
-                    <li><a   href="{{route('exercises.create')}}" class=""><i class="fa fa-plus-square"></i></a>
-                    </li>
-                    @endcan
-
-                </ul>
-                <div class="clearfix"></div>
+                            </a>
+                        </div>
+                        @endcan
+                    </div>
+                </div>
             </div>
-            <div class="x_content">
-                <div class="table-responsive">
-
-                <table id="table1" class="table table-striped table-bordered bulk_action table1">
-                    <thead>
-                    <tr>
-                        @if(app()->getLocale() == 'ar')
-                            <th>{{trans('backend.name_ar')}}</th>
-                        @else
-                            <th>{{trans('backend.name_en')}}</th>
-                        @endif
-                            <th>{{trans('backend.rest')}}</th>
-                            <th>{{trans('backend.value_date')}}</th>
-                            <th>{{trans('backend.sets')}}</th>
-                            <th>{{trans('backend.reps')}}</th>
-                            <th>{{trans('backend.levels')}}</th>
-                            <th>{{trans('backend.bodys')}}</th>
-                            <th>{{trans('backend.equipment')}}</th>
-
-                        <th>{{trans('backend.date')}}</th>
-                            @can('exercise-edit')
-
-                            <th>{{trans('backend.update')}}</th>
-                            @endcan
-                            @can('exercise-delete')
-                            <th>{{trans('backend.delete')}}</th>
-                            @endcan
-
-                    </tr>
-                    </thead>
 
 
-                    <tbody>
-
-
-
-                    </tbody>
-                </table>
+            <div class="kt-portlet__body">
+                    <div class="dataTables_wrapper dt-bootstrap4 no-footer" id="kt_table_1_wrapper">
+                            <div class="row">
+                            <div class="col-sm-12">
+                            <div class="table-responsive">
+                                    <table id="table1" class="table table-striped- table-bordered table-hover table-checkable dataTable no-footer dtr-inline">
+                                            <thead>
+                                            <tr>
+                                                @if(app()->getLocale() == 'ar')
+                                                    <th>{{trans('backend.name_ar')}}</th>
+                                                @else
+                                                    <th>{{trans('backend.name_en')}}</th>
+                                                @endif
+                                                    <th>{{trans('backend.rest')}}</th>
+                                                    <th>{{trans('backend.value_date')}}</th>
+                                                    <th>{{trans('backend.sets')}}</th>
+                                                    <th>{{trans('backend.reps')}}</th>
+                                                    <th>{{trans('backend.levels')}}</th>
+                                                    <th>{{trans('backend.bodys')}}</th>
+                                                    <th>{{trans('backend.equipment')}}</th>
+                        
+                                                <th>{{trans('backend.date')}}</th>
+                                                    @can('exercise-edit')
+                        
+                                                    <th>{{trans('backend.update')}}</th>
+                                                    @endcan
+                                                    @can('exercise-delete')
+                                                    <th>{{trans('backend.delete')}}</th>
+                                                    @endcan
+                        
+                                            </tr>
+                                            </thead>
+                        
+                        
+                                            <tbody>
+                        
+                        
+                        
+                                            </tbody>
+                                        </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>@endsection
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @endsection 
 @section('scripts')
 
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
     <script>
         $(function() {
             $('#table1').DataTable({
@@ -89,7 +146,27 @@
                     {data: 'delete', name: 'delete', orderable: false, searchable: false},
                     @endcan
 
-                ]
+                ],
+                "language": {
+                    "decimal": "",
+                    "emptyTable": "{{trans('backend.No_data_available_in_table')}}",
+                    "infoEmpty": "{{trans('backend.Showing_0_to_0_of_0_entries')}}",
+                    "info":           "{{trans('backend.showing')}}_START_ {{trans('backend.to')}} _END_ {{trans('backend.of')}} _TOTAL_{{trans('backend.entries')}} ",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "{{trans('backend.show_t')}}_MENU_ {{trans('backend.entries')}}",
+                    "search": "{{trans('backend.search')}}",
+                    "zeroRecords": "{{trans('backend.No_matching_records_found')}}",
+                    "processing":     "{{trans('backend.processing')}}",
+
+                    "paginate": {
+                        "first": "{{trans('backend.First')}}",
+                        "last": "{{trans('backend.Last')}}",
+                        "next": "{{trans('backend.Next')}}",
+                        "previous": "{{trans('backend.Previous')}}"
+                    }
+
+                }
             });
         });
     </script>
@@ -110,7 +187,7 @@
             swal({
                 title: "{{trans('backend.ask_delete')}}",
                 type: "warning",
-                buttons: true,
+                buttons: ['{{trans('backend.no')}}', '{{trans('backend.yes')}}'],
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "Yes, delete it!",

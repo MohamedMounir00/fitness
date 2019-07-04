@@ -1,9 +1,128 @@
 @extends('layouts.app')
+@section('page_title' , trans('backend.update'))
 
 @section('content')
 
 
 
+
+<div class="kt-portlet kt-portlet--mobile">
+        <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <span class="kt-portlet__head-icon">
+                        <i class="kt-font-brand flaticon2-line-chart"></i>
+                    </span>
+                    <h3 class="kt-portlet__head-title">
+                            {{trans('backend.update')}}
+                    </h3>
+                </div>
+               
+            </div>
+
+
+
+            <div class="kt-portlet__body">
+                    @if(isset($errors) > 0)
+                    @if(Session::has('errors'))
+
+                        <div class="alert alert-danger " >
+                            <ul >
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                @endif
+
+
+
+                {!! Form::open(['route'=>['silder_update',$slider->id],'method'=>'PUT','class'=>'form-horizontal form-label-left ','novalidate','files'=>true]) !!}
+
+
+
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="name">{{trans('backend.upload_image')}} <span
+                        >*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input id="name" class="form-control col-md-7 col-xs-12 dropify"
+                               name="image"
+                                type="file">
+
+                    </div>
+                </div>
+                <br>
+
+
+
+
+
+
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="name">{{trans('backend.image')}} <span
+                        >*</span>
+                    </label>
+                    <div class="col-10">
+                        <div class="kt-user-card-v2__pic">
+                            @if(isset($slider->imgeSlider->url))
+                                <img class="m-img-rounded kt-marginless"  style="width: 300px; display: block;"src="{{url($slider->imgeSlider->url)}}">
+                            @endif
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+
+
+
+
+
+
+
+    
+                <br>
+                <div class="myButton">
+                        <button id="send" type="submit" class="btn btn-success btn-elevate btn-pill btn-sm">{{trans('backend.update')}}</button>
+                        <a href="{{route('silder_all')}}"  class="btn btn-info btn-elevate btn-pill btn-sm">{{trans('backend.back')}}</a>
+
+                </div>
+
+                {!! Form::close() !!}
+            </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
 
                     <div class="x_panel">
                         <div class="x_title">
@@ -84,7 +203,7 @@
 
 
                         </div>
-                    </div>
+                    </div> --}}
 
 
 @endsection

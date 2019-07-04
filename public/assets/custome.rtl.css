@@ -1,0 +1,58 @@
+body {
+    font-family: 'Tajawal', sans-serif !important;
+}
+.row {
+    margin: 0 !important;
+}
+.dataTables_filter , .dataTables_paginate {
+    float: left ;
+}
+.myButton {
+    text-align: center;
+    margin: 20px auto !important;
+}
+.col-form-label {
+   font-weight: 500 !important;
+   font-size: 16px !important;
+}
+.kt-portlet__head-title {
+   font-weight: 600 !important;
+   font-size: 20px !important;
+}
+textarea {
+    height: 100px !important;
+}
+.kt-widget17__subtitle {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+.kt-widget17__desc {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+.roleName {
+    font-size: 16px !important;
+}
+.roleNameUser {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}
+
+.heading {
+    color: #FFF !important;
+    text-align: center !important;
+    margin: auto !important;
+    font-weight: 700 !important;
+}
+.kt-widget17__item {
+    text-align: center !important;
+}
+.loginLogo {
+    width: 300px;
+    height: 200px;
+}
+.kt-login__title {
+    color: #FFF !important;
+    font-weight: 700 !important;
+    font-size: 23px !important;
+}

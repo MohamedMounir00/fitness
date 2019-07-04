@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page_title' , trans('backend.create'))
 
 @section('content')
 
@@ -54,7 +55,7 @@
 
 
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.name_ar')}} <span
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.name_ar')}} <span
                                     >*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -62,7 +63,7 @@
                                 </div>
                             </div>
                                 <div class="item form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.name_en')}} <span
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.name_en')}} <span
                                                 >*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -70,7 +71,7 @@
                                     </div>
                                 </div>
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">{{trans('backend.upload_image')}} <span
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">{{trans('backend.upload_image')}} <span
                                            >*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
